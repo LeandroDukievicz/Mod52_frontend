@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Front End - Mód 52</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    /* Todas as Tags sem Classes e sem Ids */
+
+    body,
+    main {
+        width: 100%;
+        height: auto;
+    }
+
+    header {
+        width: 100%;
+        height: auto;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin: 0px auto;
+        padding: 20px;
+        background: linear-gradient(to right, #000046, #1cb5e0);
+    }
+
+    section {
+        width: 95%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        margin: 0px auto;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        color: #fff;
+        text-align: center;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-size: 1.5rem;
+    }
+
+    a {
+        color: #e5e3e2;
+        text-decoration: none;
+        display: flex;
+        margin-top: 5px;
+        padding: 5px;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-items: center;
+        flex-direction: row;
+        font-size: 0.9rem;
+    }
+
+    a:hover {
+        font-size: 1.0rem;
+        filter: drop-shadow(1px 1px 1px rgb(78, 32, 14));
+    }
+
+    input {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        margin-top: 15px;
+        align-items: center;
+        border-radius: 5px;
+        border: none;
+        filter: drop-shadow(1px 1px 1px #646363);
+    }
+
+    select {
+        width: 60%;
+        height: auto;
+        padding: 5px;
+        display: flex;
+        justify-content: flex-start;
+        border-radius: 5px;
+        border: none;
+        filter: drop-shadow(1px 1px 1px #646363);
+    }
+
+    button {
+        padding: 5px;
+        margin: 5px;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        background: #424242;
+        filter: drop-shadow(2px 2px 2px #ffffff);
+    }
+
+    /* --------- Todas as Classes--------- */
+
+    .flex{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .obs {
+        font-size: 0.7rem;
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+
+    .first {
+        animation-name: Bd_Colors;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes Bd_Colors {
+        0% {
+            filter: drop-shadow(2px 2px 2px rgb(0, 0, 0));
+        }
+
+        25% {
+            filter: drop-shadow(1px 1px 1px rgb(136, 136, 136));
+        }
+
+        50% {
+            filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+        }
+
+        75% {
+            filter: drop-shadow(1px 1px 1px rgb(136, 136, 136));
+        }
+
+        100% {
+            filter: drop-shadow(4px 4px 4px rgb(0, 0, 0));
+        }
+    }
+
+    .draft {
+        width: 95%;
+        height: auto;
+        margin: 0px auto;
+        padding: 10px;
+        display: flex;
+        margin-bottom: 35px;
+        align-items: center;
+        justify-content: space-between;
+        justify-items: center;
+    }
+
+    .forms {
+        width: 32%;
+        height: 80%;
+        padding: 10px;
+        align-items: center;
+        margin: 0px auto;
+        text-align: center;
+        background: #E8E8E8;
+        border-radius: 5px;
+        padding-bottom: 20px;
+        filter: drop-shadow(1px 1px 1px #646363);
+    }
+
+    .formSenha {
+        width: 30%;
+        height: 35%;
+        padding: 10px;
+        display: flex;
+        margin: 0px auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background: #E8E8E8;
+        border-radius: 5px;
+        padding-bottom: 20px;
+        filter: drop-shadow(1px 1px 1px #646363);
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .btn {
+        width: 60%;
+        height: auto;
+        font-size: 0.9rem;
+        margin: 0px auto;
+        padding: 15px;
+        background: #424242;
+        border: none;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        margin-top: 10%;
+        filter: drop-shadow(5px 5px 5px #646363);
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        font-size: 1.1em;
+        width: 70%;
+        height: auto;
+        color: rgb(255, 255, 255);
+        background: #424242;
+    }
+
+    .btnCheck {
+        width: 90%;
+        display: flex;
+        flex-direction:row ;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .btnCheck:hover {
+        color: rgb(47, 0, 255);
+    }
+
+    /*=============== Todos os Ids===============*/
+
+    #subtitle {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+        margin: 0px auto;
+        border-radius: 5px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        font-size: 1.2em;
+        background-color: #B0C4DE;
+        filter: drop-shadow(2px 2px 2px rgb(87, 87, 87));
+    }
+
+    #noAcount {
+        width: 100%;
+        height: 35%;
+        display: flex;
+        flex-direction: row;
+        margin: 0px auto;
+        margin-top: 30px;
+        background: #424242;
+        border-radius: 5px;
+        filter: drop-shadow(5px 5px 5px #646363);
+    }
+
+    #lostPass {
+        color: #000;
+        font-size: 0.9rem;
+        margin-right: 57%;
+    }
+
+    #idGen {
+        display: flex;
+        justify-content: flex-start;
+        font-size: 0.8rem;
+        margin-top: 25px;
+        margin-bottom: 5px;
+    }
+
+    #recuperate {
+        width: 25vw;
+    }
+</style>
+
+
+<body>
+    <main>
+        <header class="first" class="flex">
+            <h1 class="first">Atividade Mapa - Disciplina de Front End</h1>
+        </header>
+
+        <section id="subtitle" class="flex">
+            <h2>Formulários de Rascunho</h2>
+        </section>
+
+        <section>
+            <div class="draft" class="flex">
+                <div>
+                    <h3>Rascunho 1</h3>
+                    <p>Formulário de cadastro de usuário</p>
+                </div>
+                <div>
+                    <h4>Rascunho 2</h4>
+                    <p>Formulário de autenticação de usuário</p>
+                </div>
+                <div>
+                    <h5>Rascunho 3</h5>
+                    <p>Formulário lembrar senha do usuário</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="forms">
+                <p><strong>Formulário de Cadastro de usuário</strong></p>
+                <p class="obs first">Preencha os seus dados para o cadastro de seu
+                    usuário</p>
+                <form>
+                    <input id="login" class="flex" type="text" name="nome" required placeholder="Informe um Login">
+                    <input id="senha" class="flex" type="password" name="senha" required placeholder="Informe a Senha">
+                    <input id="email" class="flex" type="email" name="email" required placeholder="Informe seu E-mail">
+                    <input id="Fone" class="flex" type="text" name="telefone" placeholder="Telefone (XX) XXXXX-XXXX">
+                    <h6 id="idGen">Sexo:</h6>
+                    <select name="sexo" id="sexo">
+                        <option value="">Selecione</option>
+                        <option value="masc">Masculino</option>
+                        <option value="fem">Feminino</option>
+                        <option value="undefined">Prefiro não informar</option>
+                    </select>
+                    <button id="btnCadastro" class="btn" type="submit"><strong>Cadastre-se</strong>
+                    </button>
+                </form>
+            </div>
+
+            <div class="forms">
+                <p><strong>Formulário de autenticação de Usuário</strong></p>
+                <p class="obs first">Informe os seus dados de Acesso!</p>
+                <form>
+                    <input id="login" class="flex" type="text" name="nome" required placeholder="Informe um Login">
+                    <input id="password" class="flex" type="password" name="password" required placeholder="Senha">
+                    <section class="btnCheck">
+                        <div class="btnCheck">
+                            <form class="btnCheck" action="">
+                                <input class="btnCheck first" type="checkbox" value="" id="checkbox">
+                                <legend class="btnCheck first">Lembrar-me</legend>
+                            </form>
+                        </div>
+                    </section>
+
+                    <a id="noAcount" href="#">Ainda não tem Conta?&nbsp;
+                        <button class="first"><strong>Cadastre-se</strong></button>
+                    </a>
+                    <a id="lostPass" class="first" href="#">Perdeu a Senha ?</a>
+                    <button id="btnAuth" class="btn" type="submit"><strong>Logar</strong></button>
+                </form>
+            </div>
+
+            <div class="formSenha">
+                <p><strong>Formulário Lembrar senha do usuário</strong></p>
+                <p class="obs first">Informe o E-mail para criar uma nova senha!</p>
+                <form>
+                    <input id="recuperate" class="flex " type="email" name="email" required placeholder="E-mail!">
+                    <button id="rescEmail" class="btn" type="submit"><strong>Enviar</strong>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

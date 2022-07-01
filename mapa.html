@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Front End - Mód 52</title>
+</head>
+
+<style>
+    /*  reset css */
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    body{
+    width: 100vw;
+    height: 100vh;
+}
+
+   
+
+    header{
+        width: 98.5vw;
+        height: auto;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin: 0px auto;
+        padding: 20px;
+        background: linear-gradient(to right, #000046, #1cb5e0);
+       
+    }
+
+    .first{
+        animation-name: cores;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;  
+    }
+    @keyframes cores{
+        0%{  filter: drop-shadow(2px 2px 2px rgb(0, 0, 0));  }
+        25%{ filter: drop-shadow(1px 1px 1px rgb(136, 136, 136)); } 
+        50%{ filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));  }
+        75%{ filter: drop-shadow(1px 1px 1px rgb(136, 136, 136)); }
+        100%{filter: drop-shadow(4px 4px 4px rgb(0, 0, 0));  }   
+    }
+
+    h1{
+        font-size: 2.5em;
+        color:#fff;
+        text-align: center;
+       }
+
+    #subtitle{
+        width: 90vw;
+        height: auto;
+        padding: 10px;
+        margin:0px auto;
+        border-radius: 5px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        font-size: 1.2em;
+        background-color: #B0C4DE;
+        filter: drop-shadow(2px 2px 2px rgb(87, 87, 87));
+    }
+    .draft{
+        width: 87vw;
+        height: auto;
+        margin:0px auto;
+        padding: 10px;
+        display: flex;
+        margin-bottom: 35px;
+        align-items: center;
+        justify-content: space-between;
+        justify-items: center;
+    }
+    h2,h3,h4,h5{
+        font-size: 1.5rem;
+    }
+
+
+ 
+    .formsDraft{
+        width: 27vw;
+        display: flex;
+        flex-direction: row;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+       
+    }
+
+   /* .auth{
+    width: 27%;
+    height: auto;
+    padding: 10px;
+   
+    background: #E8E8E8;
+    border-radius:5px ;
+    filter:drop-shadow(2px 2px 1px #646363); 
+
+
+
+   }
+    
+   .rescuePass{
+    width: 20%;
+    height: auto;
+    padding: 10px;
+   
+    background: #E8E8E8;
+    border-radius:5px ;
+    filter:drop-shadow(2px 2px 1px #646363); 
+
+
+
+   } */
+
+    h6{
+        font-size: 1.0rem;
+    }
+    .obs{
+        font-size: 0.8rem;
+        margin-top:10px;
+        margin-bottom:5px;
+        text-align: center;
+    }
+    input{
+        width: 23vw;
+        height:auto;
+        padding: 10px;
+        margin-top: 15px;
+        border-radius: 5px;
+        border: none;
+        filter:drop-shadow(1px 1px 1px #646363);    
+    }
+    #idGen{
+        font-size: 0.8rem;
+        margin-top: 25px;
+        margin-bottom: 5px;
+    }
+    select{
+        width: 60%;
+        height: auto;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+        filter:drop-shadow(1px 1px 1px #646363);    
+    }
+    .btn{
+        width: 18vw;
+        height:auto;
+        font-size: 1.0em;
+        margin: 0px auto;
+        padding: 15px;
+        background: #b5b5b5;
+        border: none;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        margin-top: 10%;
+        filter:drop-shadow(5px 5px 5px #646363);  
+        cursor: pointer;
+    }
+    .btn:hover {
+        font-size: 1.1em;
+        width: 20vw;
+        height: auto;
+        color:rgb(255, 255, 255);
+        background: #424242;
+        
+    }
+
+
+
+    #check{
+        margin: 0px auto;
+        padding: 5px;
+    }
+ 
+
+
+    
+ 
+
+
+</style>
+
+
+
+<body>
+    <main>
+        <header class="first" class="flex">
+            <h1 class="first">Atividade Mapa - Disciplina de Front End</h1>
+        </header>
+
+        <section id="subtitle" class="flex">
+            <h2>Formulários de Rascunho</h2>
+        </section>
+
+        <section>
+            <div class="draft" class="flex">
+                <div>
+                    <h3>Rascunho 1</h3>
+                    <p>Formulário de cadastro de usuário</p>
+                </div>
+                <div>
+                    <h4>Rascunho 2</h4>
+                    <p>Formulário de autenticação de usuário</p>
+                </div>
+                <div>
+                    <h5>Rascunho 3</h5>
+                    <p>Formulário lembrar senha do usuário</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="sectionDraft">
+            <div class="forms  ">
+
+
+                <div>
+                <p><strong>Formulário de Cadastro de usuário</strong></p>
+                <p class="obs" >Preencha os seus dados para o cadastro de seu usuário</p>
+                <form>
+                    <input id="login" class="flex" type="text" name="nome" required placeholder="Informe um Login">
+                    <input id="password" class="flex" type="password" name="password" required placeholder="Informe sua Senha">
+                    <input id="email" class="flex" type="email" name="email" required placeholder="Informe seu E-mail">
+                    <input  id="Fone" class="flex" type="text" name="telefone" placeholder="Insira o Núm de Telefone    (  )         -         "> 
+                    <h6 id="idGen" >Sexo:</h6>
+                    <select name="sexo" id="sexo">
+                        <option value="masc">Masculino</option>
+                        <option value="fem">Feminino</option>
+                        <option value="undefined">Prefiro não informar</option>
+                    </select>
+                    <button id="btnCadastro" class="btn" type="submit"><strong>Cadastrar</strong> </button>
+                </form>
+                </div>             
+           
+
+                 <div class="forms">
+                <p><strong>Formulário de autenticação de Usuário</strong></p>
+                <p class="obs" >Informe os seus dados de Acesso!</p>
+                <form>
+                    <input id="login" class="flex" type="text" name="nome" required placeholder="Informe um Login">
+                    <input id="password" class="flex" type="password" name="password" required placeholder="Informe sua Senha">
+                    <input id="check"  type="checkbox">
+                    <p class="obs">Lembrar-me </p>
+                    <a href="#" class="obs">Ainda não tem Conta?
+                        <button>Cadastre-se</button>
+                    </a><br>
+                    <a href="#">Perdeu a sua Senha ?</a>
+                    
+                    <button id="btnAuth" class="btn" type="submit"><strong>Logar</strong> </button>
+                </form>             
+            </div>
+
+            <div class="forms  ">
+                <p><strong>Formulário Lembrar senha do usuário</strong></p>
+                <p class="obs" >Informe seu E-mail para criar uma nova senha!</p>
+                <form>  
+                    <input id="rescEmail" class="flex" type="email" name="email" required placeholder="Informe seu E-mail">                    
+                    <button id="btnAuth" class="btn" type="submit"><strong>Enviar</strong> </button>
+                </form>             
+            </div>
+        </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
